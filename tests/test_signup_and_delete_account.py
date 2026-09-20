@@ -30,3 +30,14 @@ def test_signup_and_delete_account(home_page, page):
 
     signup_page.password_input(password)
 
+    signup_page.select_birt_day("5", "10", "1994")
+
+    signup_page.newsletter_checkbox().check()
+
+    expect(signup_page.newsletter_checkbox()).to_be_checked()
+
+    signup_page.partner_offers_checkbox().check()
+
+    expect(signup_page.partner_offers_checkbox()).to_be_checked()
+
+    signup_page.fill_name("John", "Tester")

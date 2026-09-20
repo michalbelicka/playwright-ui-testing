@@ -36,3 +36,18 @@ class SignupPage:
 
     def password_input(self, password):
         self.page.locator('[data-qa="password"]').fill(password)
+
+    def select_birt_day(self, day, month, year):
+        self.page.locator("#days").select_option(day)
+        self.page.locator("#months").select_option(month)
+        self.page.locator("#years").select_option(year)
+
+    def newsletter_checkbox(self):
+        return self.page.locator("#newsletter")
+
+    def partner_offers_checkbox(self):
+        return self.page.locator("#optin")
+
+    def fill_name(self, first_name, last_name):
+        self.page.locator("#first_name").fill(first_name)
+        self.page.locator("#last_name").fill(last_name)

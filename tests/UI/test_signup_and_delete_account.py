@@ -4,6 +4,8 @@ from playwright.sync_api import expect
 
 def test_signup_and_delete_account(home_page, page):
 
+    expect(page).to_have_url("https://www.automationexercise.com/")
+    
     signup_page = SignupPage(page)
     
     signup_page.click_signup_login()

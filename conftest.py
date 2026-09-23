@@ -10,3 +10,5 @@ def home_page(page: Page):
 
     if cookie_banner.is_visible():
         cookie_banner.click()
+
+    return page

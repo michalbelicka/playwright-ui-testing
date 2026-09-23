@@ -2,11 +2,11 @@ from pages.signup_page import SignupPage
 import random
 from playwright.sync_api import expect
 
-def test_signup_and_delete_account(home_page, page):
+def test_signup_and_delete_account(home_page):
 
-    expect(page).to_have_url("https://www.automationexercise.com/")
+    expect(home_page).to_have_url("https://www.automationexercise.com/")
     
-    signup_page = SignupPage(page)
+    signup_page = SignupPage(home_page)
     
     signup_page.click_signup_login()
 

@@ -18,7 +18,7 @@ def test_login(home_page):
     name = "Tester2310"
     expected_text = f"Logged in as {name}"
 
-    expect(signup_page.logged_in_as()).to_have_text(expected_text)
+    expect(login_page.logged_in_as()).to_have_text(expected_text)
 
 
 

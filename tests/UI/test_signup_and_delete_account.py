@@ -1,4 +1,5 @@
 from pages.signup_page import SignupPage
+from pages.login_page import LoginPage
 import random
 from playwright.sync_api import expect
 
@@ -7,6 +8,7 @@ def test_signup_and_delete_account(home_page):
     expect(home_page).to_have_url("https://www.automationexercise.com/")
     
     signup_page = SignupPage(home_page)
+    login_page = LoginPage(home_page)
     
     signup_page.click_signup_login()
 
@@ -64,7 +66,7 @@ def test_signup_and_delete_account(home_page):
 
     expected_text = f"Logged in as {name}"
 
-    expect(signup_page.logged_in_as()).to_have_text(expected_text)
+    expect(login_page.logged_in_as()).to_have_text(expected_text)
 
     signup_page.click_delete_account()
 

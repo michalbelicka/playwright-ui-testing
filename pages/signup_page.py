@@ -81,9 +81,6 @@ class SignupPage:
     def click_continue(self):
         self.page.locator('[data-qa="continue-button"]').click()
 
-    def logged_in_as(self):
-        return self.page.locator("a", has_text="Logged in as")
-
     def click_delete_account(self):
         self.page.get_by_role("link", name="Delete Account").click()
 

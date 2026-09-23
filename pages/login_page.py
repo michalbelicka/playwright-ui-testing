@@ -13,3 +13,6 @@ class LoginPage:
 
     def click_login(self):
         self.page.get_by_role("button", name="Login").click()
+
+    def logged_in_as(self):
+        return self.page.locator("a", has_text="Logged in as")

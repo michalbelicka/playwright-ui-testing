@@ -16,3 +16,6 @@ class LoginPage:
 
     def logged_in_as(self):
         return self.page.locator("a", has_text="Logged in as")
+
+    def click_logout(self):
+        self.page.get_by_role("link", name="Logout").click()

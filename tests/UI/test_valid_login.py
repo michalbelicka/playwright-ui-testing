@@ -2,7 +2,7 @@ from pages.signup_page import SignupPage
 from pages.login_page import LoginPage
 from playwright.sync_api import expect
 
-def test_login(home_page):
+def test_valid_login(home_page):
 
     signup_page = SignupPage(home_page)
     login_page = LoginPage(home_page)

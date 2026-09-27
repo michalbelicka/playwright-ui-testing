@@ -31,4 +31,9 @@ class CartPage:
         if close_button.is_visible():
             close_button.click()
 
+    def remove_product(self, product_name):
+        product = self.page.locator("#cart_info", has_text=product_name)
+
+        product.locator(".cart_quantity_delete").click()
+
             

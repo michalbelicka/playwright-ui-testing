@@ -13,3 +13,9 @@ class ProductsPage:
     def add_product_to_cart(self, product_name):
         product = self.page.locator(".productinfo").filter(has_text=product_name)
         product.get_by_text("Add to cart").click()
+
+    def added_heading(self):
+        return self.page.get_by_role("heading", name="Added!")
+
+    def click_view_cart(self):
+        self.page.get_by_role("link", name="View Cart").click()

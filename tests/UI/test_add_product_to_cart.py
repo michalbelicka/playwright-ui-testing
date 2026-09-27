@@ -13,8 +13,16 @@ def test_add_product_to_cart(logged_in):
 
     expect(cart_page.cart_is_empty_message()).to_be_visible()
 
+    cart_page.close_ad()
+
     products_page.click_products()
 
     expect(products_page.all_products_heading()).to_be_visible()
 
     products_page.add_product_to_cart("Blue Top")
+
+    expect(products_page.added_heading()).to_be_visible()
+
+    products_page.click_view_cart()
+
+    expect(cart_page.product_in_cart("Blue Top")).to_be_visible()

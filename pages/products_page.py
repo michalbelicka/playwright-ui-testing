@@ -29,3 +29,7 @@ class ProductsPage:
 
     def searched_product(self, product_name):
         return self.page.locator(".productinfo", has_text=product_name)
+
+    def view_product(self, product_name):
+        product = self.page.locator(".product-image-wrapper", has_text=product_name)
+        product.get_by_role("link", name="View Product").click()

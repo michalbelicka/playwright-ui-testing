@@ -19,3 +19,6 @@ class LoginPage:
 
     def click_logout(self):
         self.page.get_by_role("link", name="Logout").click()
+
+    def login_error(self):
+        return self.page.get_by_text("Your email or password is incorrect!", exact=True)

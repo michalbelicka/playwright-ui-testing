@@ -19,3 +19,13 @@ class ProductsPage:
 
     def click_view_cart(self):
         self.page.get_by_role("link", name="View Cart").click()
+
+    def search_product(self, product_name):
+        self.page.get_by_placeholder("Search Product").fill(product_name)
+        self.page.locator("#submit_search").click()
+
+    def searched_products_heading(self):
+        return self.page.get_by_role("heading", name="Searched Products")
+
+    def searched_product(self, product_name):
+        return self.page.locator(".productinfo", has_text=product_name)

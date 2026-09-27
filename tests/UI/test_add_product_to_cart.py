@@ -2,10 +2,10 @@ from pages.products_page import ProductsPage
 from pages.cart_page import CartPage
 from playwright.sync_api import expect
 
-def test_add_product_to_cart(logged_in):
+def test_add_product_to_cart(logged_in_and_empty_cart):
 
-    products_page = ProductsPage(logged_in)
-    cart_page = CartPage(logged_in)
+    products_page = ProductsPage(logged_in_and_empty_cart)
+    cart_page = CartPage(logged_in_and_empty_cart)
 
     cart_page.click_cart()
 

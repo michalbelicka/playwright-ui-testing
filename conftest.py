@@ -2,6 +2,7 @@ import pytest
 from playwright.sync_api import Page
 from pages.login_page import LoginPage
 from pages.signup_page import SignupPage
+from pages.cart_page import CartPage
 
 @pytest.fixture
 def home_page(page: Page):
@@ -29,3 +30,15 @@ def logged_in(home_page):
 
     return home_page
 
+@pytest.fixture
+def logged_in_and_empty_cart(logged_in):
+
+    cart_page = CartPage(logged_in)
+
+    cart_page.click_cart()
+
+    cart_page.empty_cart()
+
+    cart_page.close_ad()
+
+    return logged_in

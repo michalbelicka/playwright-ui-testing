@@ -53,6 +53,7 @@ playwright-ui-testing/
 ├── requirements.txt
 ├── TEST_PLAN.md
 └── README.md
+```
 
 ## Test Design
 
@@ -91,4 +92,7 @@ The workflow:
 ## Website
 
 [Automation Exercise](https://www.automationexercise.com/)
+
+```
+
 ```

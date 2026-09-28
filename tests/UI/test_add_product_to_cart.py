@@ -7,14 +7,6 @@ def test_add_product_to_cart(logged_in_and_empty_cart):
     products_page = ProductsPage(logged_in_and_empty_cart)
     cart_page = CartPage(logged_in_and_empty_cart)
 
-    cart_page.click_cart()
-
-    cart_page.empty_cart()
-
-    expect(cart_page.cart_is_empty_message()).to_be_visible()
-
-    cart_page.close_ad()
-
     products_page.click_products()
 
     expect(products_page.all_products_heading()).to_be_visible()

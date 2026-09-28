@@ -89,10 +89,29 @@ The workflow:
 - Expand UI test coverage
 - Add more advanced test scenarios
 
-## Website
+## How to Run
 
-[Automation Exercise](https://www.automationexercise.com/)
+Clone the repository:
 
+```bash
+git clone https://github.com/michalbelicka/playwright-ui-testing.git
+cd playwright-ui-testing
 ```
 
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Install Playwright browsers:
+
+```bash
+playwright install
+```
+
+Run the tests:
+
+```bash
+pytest
 ```

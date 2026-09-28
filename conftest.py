@@ -42,3 +42,18 @@ def logged_in_and_empty_cart(logged_in):
     cart_page.close_ad()
 
     return logged_in
+
+@pytest.fixture
+def empty_cart(home_page):
+
+    cart_page = CartPage(home_page)
+
+    cart_page.click_cart()
+    
+    cart_page.empty_cart()
+    
+    cart_page.close_ad()
+
+    return home_page
+
+

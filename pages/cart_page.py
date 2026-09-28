@@ -36,4 +36,9 @@ class CartPage:
 
         product.locator(".cart_quantity_delete").click()
 
+    def product_quantity(self, product_name):
+        product = self.page.locator("#cart_info", has_text=product_name)
+
+        return product.locator(".disabled")
+
             

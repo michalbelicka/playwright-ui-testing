@@ -41,4 +41,7 @@ class CartPage:
 
         return product.locator(".disabled")
 
-            
+    def product_total_price(self, product_name):
+        product = self.page.locator("#cart_info", has_text=product_name)
+
+        return product.locator("p.cart_total_price")

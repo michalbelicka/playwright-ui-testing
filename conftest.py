@@ -3,6 +3,7 @@ from playwright.sync_api import Page
 from pages.login_page import LoginPage
 from pages.signup_page import SignupPage
 from pages.cart_page import CartPage
+from pages.products_page import ProductsPage
 
 @pytest.fixture
 def home_page(page: Page):
@@ -56,4 +57,23 @@ def empty_cart(home_page):
 
     return home_page
 
+@pytest.fixture
+def logged_in_with_product(logged_in):
 
+    cart_page = CartPage(logged_in)
+    
+    cart_page.click_cart()
+    
+    cart_page.empty_cart()
+    
+    cart_page.close_ad()
+
+    products_page = ProductsPage(logged_in)
+
+    products_page.click_products()
+
+    products_page.add_product_to_cart("Blue Top")
+
+    products_page.click_view_cart()
+
+    return logged_in

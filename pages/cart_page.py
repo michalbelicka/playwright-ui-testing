@@ -45,3 +45,6 @@ class CartPage:
         product = self.page.locator("#cart_info", has_text=product_name)
 
         return product.locator("p.cart_total_price")
+
+    def click_proceed_to_checkout(self):
+        self.page.locator("a.check_out").click()

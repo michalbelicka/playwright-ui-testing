@@ -13,5 +13,11 @@ class CheckoutPage:
     def review_order_heading(self):
         return self.page.get_by_role("heading", name="Review Your Order")
 
-    def product_name(self):
-        return self.page.get_by_text("Blue Top")
+    def product_name(self, product_name):
+        return self.page.get_by_text(product_name)
+
+    def enter_order_comment(self, order_comment):
+        self.page.locator('textarea[name="message"]').fill(order_comment)
+
+    def click_place_order(self):
+        self.page.get_by_role("link", name="Place Order").click()
